@@ -7,24 +7,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-   <script>
-    $(document).ready(function(){
-    $("#jogo").hide();
-})
-$("#iniciar").on("click",function(){
-    var nome = $("#nome").val();
-    debugger
-     if(vazioOuNulo(nome)){
-        alert("Digite seu nome");
-        return false;
-     }
-     $("#nomeJogo").append(nome);
-     $("#jogo").show();
-} )
-function vazioOuNulo(valor){
-    return valor === null || valor === undefined || valor === "";
-}
-   </script>
+   <script src="assets/js/scripts.js"></script>
 </head>
 <body>
     <div class="container">
@@ -32,9 +15,43 @@ function vazioOuNulo(valor){
         <span>Seu nome:</span>
         <input type="text" placeholder="Digite seu nome" id="nome">
         <button id="iniciar">Começar a jogar</button>
+        <br>
+        <span>Jogar até cansar?</span>
+        <input type="radio" name="concordar" checked value="sim">
+        <span>Sim</span>
+        <input type="radio" name="concordar" value="nao">
+        <span>Não</span>
+        <br>
+        <div id="opcoes">
+            <span>Melhor de:</span>
+        <input type="radio" name="3" checked >
+        <span>3</span>
+        <input type="radio" name="3" >
+        <span>5</span>
+        <input type="radio" name="3" >
+        <span>7</span>
+        </div>
     </div>
+
     <div class="jogo">
         <span id="nomeJogo"> </span>
+        <div id="Player1"></div>
+        <select id="selectPlayer1">
+            <option value="0">Selecione uma opção</option>
+            <option value="1">Pedra</option>
+            <option value="2">Papel</option>
+            <option value="3">Tesoura</option>
+        </select>
+        <button id="jogar">Jogar</button>
+    </div>
+
+    <div id="resultado">
+        <h1>Resultado</h1>
+        <span>Player1</span>
+        <div id="escolhap1"></div>
+        <span>Player2</span>
+        <div id= "escolhap2"></div>
+        <button id="repetir">Jogar Novamente</button>
     </div>
 </body>
 </html>
