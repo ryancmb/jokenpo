@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jokenpo</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+   <script>
+    $(document).ready(function(){
+    $("#jogo").hide();
+})
+$("#iniciar").on("click",function(){
+    var nome = $("#nome").val();
+    debugger
+     if(vazioOuNulo(nome)){
+        alert("Digite seu nome");
+        return false;
+     }
+     $("#nomeJogo").append(nome);
+     $("#jogo").show();
+} )
+function vazioOuNulo(valor){
+    return valor === null || valor === undefined || valor === "";
+}
+   </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Jokenpo</h1>
+        <span>Seu nome:</span>
+        <input type="text" placeholder="Digite seu nome" id="nome">
+        <button id="iniciar">Começar a jogar</button>
+    </div>
+    <div class="jogo">
+        <span id="nomeJogo"> </span>
+    </div>
+</body>
+</html>
